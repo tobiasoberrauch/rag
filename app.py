@@ -1,17 +1,16 @@
 import os
 import streamlit as st
 from langchain.llms import Ollama
+from llama_index import VectorStoreIndex, ServiceContext, SimpleDirectoryReader
 from llama_index.vector_stores import DeepLakeVectorStore
 from llama_index.storage.storage_context import StorageContext
 from llama_index.service_context import ServiceContext
-from llama_index import VectorStoreIndex, ServiceContext
-from llama_index import SimpleDirectoryReader
 
 llm = Ollama(model="solar")
 my_activeloop_org_id = "tobeetaylor"
 my_activeloop_dataset_name = "dias-dev-2"
 dataset_path = f"hub://{my_activeloop_org_id}/{my_activeloop_dataset_name}"
-vector_store = DeepLakeVectorStore(dataset_path=dataset_path, overwrite=False)
+vector_store = DeepLakeVectorStore(dataset_path=dataset_path, overwrite=False, read_only=True), 
 storage_context = StorageContext.from_defaults(vector_store=vector_store)
 service_context = ServiceContext.from_defaults(llm=llm, embed_model="local:BAAI/bge-base-en-v1.5")
 
