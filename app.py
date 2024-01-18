@@ -27,7 +27,7 @@ if "messages" not in st.session_state.keys():
 
 @st.cache_resource(show_spinner=False)
 def load_data():
-    with st.spinner(text="Loading and indexing the Streamlit docs – hang tight! This should take 1-2 minutes."):
+    with st.spinner(text="Dokumente werden geladen. Bitte warten Sie! Dies sollte 1-2 Minuten dauern."):
         reader = SimpleDirectoryReader(input_dir="./data", recursive=True)
         docs = reader.load_data()
 
