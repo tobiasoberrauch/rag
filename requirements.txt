@@ -2,3 +2,4 @@ langchain
 llama-index
 deeplake
 transformers
+torch
