@@ -3,3 +3,4 @@ llama-index
 deeplake
 transformers
 torch
+pypdf
