@@ -4,3 +4,4 @@ deeplake
 transformers
 torch
 pypdf
+botocore==1.27.59
