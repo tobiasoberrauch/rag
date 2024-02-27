@@ -10,7 +10,7 @@ llm = Ollama(model="solar")
 my_activeloop_org_id = "tobeetaylor"
 my_activeloop_dataset_name = "dias-dev-2"
 dataset_path = f"hub://{my_activeloop_org_id}/{my_activeloop_dataset_name}"
-vector_store = DeepLakeVectorStore(dataset_path=dataset_path, overwrite=False, read_only=True), 
+vector_store = DeepLakeVectorStore(dataset_path=dataset_path, overwrite=False)
 storage_context = StorageContext.from_defaults(vector_store=vector_store)
 service_context = ServiceContext.from_defaults(llm=llm, embed_model="local:BAAI/bge-base-en-v1.5")
 
